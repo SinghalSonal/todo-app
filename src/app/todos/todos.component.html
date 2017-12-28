@@ -1,0 +1,30 @@
+<div>
+  <label>Name:
+    <input [(ngModel)]="myTodo.name" placeholder="name" type="text" />
+  </label>
+</div>
+<div>
+  <label>
+    IsComplete:
+    <input [(ngModel)]="myTodo.isComplete" type="checkbox" />
+  </label>
+</div>
+<div>
+  <label>
+    Id:
+    <input [(ngModel)]="myTodo.id" type="number" readonly />
+  </label>
+</div>
+<button (click)="saveTodo()">SAVE</button>
+
+
+
+<ul >
+  <li *ngFor="let item of todos">
+    <!-- <div *ngIf="item.isComplete"> -->
+
+    <a (click)="editTodo(item)" target="_blank" href="#" ><span >{{item.id}}</span> {{item.name}} {{item.isComplete}}
+    </a>
+    <!-- </div> -->
+  </li>
+</ul>
